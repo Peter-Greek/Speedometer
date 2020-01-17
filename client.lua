@@ -17,7 +17,8 @@ Citizen.CreateThread(function()
 				SendNUIMessage({
 					displayhud = true,
 					speed = carSpeed,
-					RPM = carRPM
+					RPM = carRPM,
+					KMH = KPH
 				})
 			else
 				SendNUIMessage({
