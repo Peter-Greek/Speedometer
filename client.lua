@@ -1,10 +1,18 @@
+local MPH = true 
+local KPH = false
+if MPH then
+  factor = 2.237
+else
+  factor = 3.6 
+end
+
 Citizen.CreateThread(function()
 	while true do
 		local ped = GetPlayerPed(-1)
 		if(IsPedInAnyVehicle(ped)) then
 			local vehicle = GetVehiclePedIsIn(ped, false)
 			if vehicle and GetPedInVehicleSeat(vehicle, -1) == ped then
-				carSpeed = math.ceil(GetEntitySpeed(vehicle) * 2.237)
+				carSpeed = math.ceil(GetEntitySpeed(vehicle) * factor)
 				carRPM = GetVehicleCurrentRpm(vehicle)
 				SendNUIMessage({
 					displayhud = true,
