@@ -1,7 +1,7 @@
 Citizen.CreateThread(function()
 	while true do
 		local ped = GetPlayerPed(-1)
-		if IsPedInAnyVehicle(ped) then
+		if(IsPedInAnyVehicle(ped)) then
 			local vehicle = GetVehiclePedIsIn(ped, false)
 			if vehicle and GetPedInVehicleSeat(vehicle, -1) == ped then
 				carSpeed = math.ceil(GetEntitySpeed(vehicle) * 2.237)
